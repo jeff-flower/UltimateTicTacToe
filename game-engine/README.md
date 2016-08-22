@@ -1,36 +1,47 @@
-# game-engine
+## About This Project
+This project enjoys long walks on the beach, fluffy dogs and staring deeply
+into the glowing light of a command line terminal.
 
-FIXME: description
+But seriously...
+Contained within this project is a program meant to run on a server for competing
+in an AI Bot Challenge run by [The AI Games](http://theaigames.com). Specifcally,
+[Ultimate Tic Tac Toe](http://theaigames.com/competitions/ultimate-tic-tac-toe/rules)
 
-## Installation
+### Is our bot any good?
+Probably not. But it's ours, and we love it anyways.
 
-Download from http://example.com/FIXME.
+## Running
 
-## Usage
+### In the terminal
+Although it won't be very exciting, in the terminal, assuming leiningen is installed,
+navigate to the root of the project folder and enter:
 
-FIXME: explanation
+    => lein run
 
-    $ java -jar game-engine-0.1.0-standalone.jar [args]
+### And if I don't have Leiningen or Clojure installed?
+Leiningen has tools for packaging the program as a JAR file. We don't have one yet,
+but eventually we will.
 
-## Options
+## Testing with [Midje](https://github.com/marick/Midje)
 
-FIXME: listing of options this app accepts.
+### Setup
+1) In ~/.lein/profiles.clj and add:
 
-## Examples
+    {:user {:plugins [[lein-midje "3.1.3"]]}}
 
-...
+### [Tutorial](https://github.com/marick/Midje/wiki/A-tutorial-introduction)
 
-### Bugs
+### Running your tests
 
-...
+#### Autotest
+Autotest will watch your files and rerun your tests any time you save your files.
+To run Autotest from an active repl:
 
-### Any Other Sections
-### That You Think
-### Might be Useful
+    => (use 'midje.repl)
+    => (autotest)
 
-## License
+#### Run tests once only
+If you just want to run your tests once, from the terminal navigate to the root of
+your project and enter:
 
-Copyright © 2016 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+    => lein midje
